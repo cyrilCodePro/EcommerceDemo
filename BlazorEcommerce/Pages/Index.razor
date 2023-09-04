@@ -1,0 +1,34 @@
+﻿@page "/"
+
+<h3>Product Listing</h3>
+<div class="align-content-center">
+<div class="search-container">
+    <input type="text" placeholder="Search for products..."  @bind:event="oninput" />
+    <button >🔍</button>
+</div>
+</div>
+<div class="row">
+    @foreach (var product in _products)
+    {
+        <div class="col-md-4">
+            <ProductDetail Product=@product />
+        </div>
+    }
+</div>
+
+
+@code
+{
+    private List<Product> _products = new List<Product>
+    {
+        new Product { Id = 1, Name = "Product 1", Price = 49.99M, ImageUrl = "https://webneel.com/wallpaper/sites/default/files/images/05-2013/cats-wallpapers-beautiful-cats.jpg", Description = "Sample Product 1" },
+        new Product { Id = 2, Name = "Product 1", Price = 49.99M, ImageUrl = "https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244649_1280.jpg", Description = "Sample Product 1" },
+        new Product { Id = 3, Name = "Product 1", Price = 49.99M, ImageUrl = "https://webneel.com/wallpaper/sites/default/files/images/05-2013/cats-wallpapers-beautiful-cats.jpg", Description = "Sample Product 1" },
+        new Product { Id = 4, Name = "Product 1", Price = 49.99M, ImageUrl = "https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244649_1280.jpg", Description = "Sample Product 1" },
+        new Product { Id = 5, Name = "Product 1", Price = 49.99M, ImageUrl = "https://webneel.com/wallpaper/sites/default/files/images/05-2013/cats-wallpapers-beautiful-cats.jpg", Description = "Sample Product 1" },
+        new Product { Id = 6, Name = "Product 1", Price = 49.99M, ImageUrl = "https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244649_1280.jpg", Description = "Sample Product 1" },
+        new Product { Id = 7, Name = "Product 1", Price = 49.99M, ImageUrl = "https://webneel.com/wallpaper/sites/default/files/images/05-2013/cats-wallpapers-beautiful-cats.jpg", Description = "Sample Product 1" },
+
+    // Add more sample products as needed
+    };
+}
